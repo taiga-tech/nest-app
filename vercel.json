@@ -1,0 +1,20 @@
+{
+  "version": 2,
+  "public": false,
+  "builds": [
+    {
+      "src": "dist/main.ts",
+      "use": "@vercel/node"
+    }
+  ],
+  "routes": [
+    {
+      "headers": {
+        "Access-Control-Allow-Origin": "*",
+        "Access-Control-Allow-Methods": "GET, POST, PUT, DELETE, OPTIONS"
+      },
+      "src": "/.*",
+      "dest": "dist/main.ts"
+    }
+  ]
+}
